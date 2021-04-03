@@ -3,13 +3,13 @@
 A ideia desse repositório é ter códigos para realizar um testes simples em um plugin usável no WordPress e executar as ações básicas para usar o PHPUnit com WordPress.
 
 ## Referências
-- [PHPUnit Manual](https://phpunit.readthedocs.io/pt_BR/latest/) - em Português, possui todo o conteúdo importante para PhPUnit.
+- [PHPUnit Manual](https://phpunit.readthedocs.io/pt_BR/latest/) - em Português, possui todo o conteúdo importante para PHPUnit.
 - [Mockery](http://docs.mockery.io/en/latest/index.html) - para facilitar a criar mocks dentro do PHPUnit.
-- [Docker pra WP](https://github.com/aleemerichxpi/docker-wp) -  com PHPUnit ativo.
+- [Docker pra WP](https://github.com/aleemerich/wp-docker-package) -  com PHPUnit ativo.
 
 ## Premissas
 
-1. Seu ambiente já deve ter o PHPUnit funcional (se quiser, use [este projeto com Docker](https://github.com/aleemerichxpi/docker-wp) que já possui PHPUnit funcional).
+1. Seu ambiente já deve ter o PHPUnit funcional (se quiser, use [este projeto com Docker](https://github.com/aleemerich/wp-docker-package) que já possui PHPUnit funcional).
 2. Você precisa enteder premissas básicas de testes unitário. Coisas como [Padrão AAA](https://medium.com/@alamonunes/teste-unit%C3%A1rio-e-o-padr%C3%A3o-aaa-arrange-act-assert-cb81d587368a), Mocks e etc. Há inúmeros materais para consulta na Web.
 3. Quando você executa um teste unitário no WordPress **não há um WordPress rodando, em execução**. Entender isso é vital para que você compreenda as premissas de testes com PHPUnit e WordPress. Você deve testar de modo atômico (um método, uma função) então não haverá todo sistema ativo para o testes. Se esse método consome coisas externas, esses dados e consumos devem ser previstos em formas de mock.
 4. É possível subir uma instância em memória do WordPress (uma espécie de objeto WordPress), mas essa instância não é um site funcional. Ela **não terá plugins, temas, acesso a banco de dados e etc**. Apenas tera o CORE do WordPress funcionando, nada mais. Isso pode ser útil quando há funções ou objetos que você use dentro dos seus códigos, mas o escopo de ação é bem limitado (por isso, o isolamento do consumo dos recursos WordPress dentro de sua classe é importante).
